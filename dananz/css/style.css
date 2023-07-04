@@ -3049,10 +3049,6 @@ textarea.body-contacts__message._form-focus {
   .footer-description {
     gap: 5.0625rem;
   }
-
-  .location__body {
-    gap: 6.25rem;
-  }
 }
 
 @media (max-width: 20em) {
@@ -3480,6 +3476,10 @@ textarea.body-contacts__message._form-focus {
     padding: 0.625rem 1.375rem 0.625rem 0.625rem;
   }
 
+  .header__container {
+    min-height: 4.375rem;
+  }
+
   .header__logo img {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 6rem;
@@ -3555,14 +3555,6 @@ textarea.body-contacts__message._form-focus {
   .people-creative {
     gap: 1rem;
   }
-
-  .location__body {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 1.875rem;
-  }
 }
 
 @media (max-width: 47.99875em) {
@@ -3625,6 +3617,10 @@ textarea.body-contacts__message._form-focus {
   .actions-body__button {
     width: 100%;
     text-align: center;
+  }
+
+  .header__container {
+    min-height: 3.125rem;
   }
 
   .header__logo img {
@@ -3767,10 +3763,6 @@ textarea.body-contacts__message._form-focus {
 
   .social-footer {
     justify-items: start;
-  }
-
-  .main {
-    padding-top: 1.875rem;
   }
 
   .top-main__title::after {
@@ -3928,6 +3920,12 @@ textarea.body-contacts__message._form-focus {
   .skills-services {
     -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .location__body {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
   }
 }
 
@@ -5137,15 +5135,15 @@ textarea.body-contacts__message._form-focus {
 }
 
 @media (min-width: 48em) and (max-width: 90em) {
-@supports (gap: clamp( 1.25rem , -4.4642857143rem  +  11.9047619048vw , 6.25rem )) {
+@supports (gap: clamp( 0.625rem , -5.8035714286rem  +  13.3928571429vw , 6.25rem )) {
     .location__body {
-      gap: clamp( 1.25rem , -4.4642857143rem  +  11.9047619048vw , 6.25rem );
+      gap: clamp( 0.625rem , -5.8035714286rem  +  13.3928571429vw , 6.25rem );
     }
 }
 
-@supports not (gap: clamp( 1.25rem , -4.4642857143rem  +  11.9047619048vw , 6.25rem )) {
+@supports not (gap: clamp( 0.625rem , -5.8035714286rem  +  13.3928571429vw , 6.25rem )) {
     .location__body {
-      gap: calc(1.25rem + 5 * (100vw - 48rem) / 42);
+      gap: calc(0.625rem + 5.625 * (100vw - 48rem) / 42);
     }
 }
 }
