@@ -176,6 +176,65 @@ body {
   padding: 0 0.9375rem;
 }
 
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg--contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.button {
+  display: inline-block;
+  border: 0.0625rem solid var(--bg-button);
+  border-radius: 0.3125rem;
+  background-color: var(--bg-button);
+  padding: 0.5625rem 1.625rem;
+  color: var(--color-button);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.button--light {
+  background-color: var(--color-button);
+  color: var(--bg-button);
+  border: 0.0625rem solid var(--color-border);
+}
+
+.block-header--center {
+  text-align: center;
+}
+
+.block-header__title {
+  color: var(--text-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.0625rem;
+}
+
+.block-header__title--big {
+  letter-spacing: -0.0625rem;
+}
+
+.block-header__text p {
+  line-height: 1.7;
+  letter-spacing: -0.0625rem;
+}
+
 body::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.5);
@@ -354,63 +413,151 @@ body::after {
   color: rgb(252, 126, 126);
 }
 
-[class*=-ibg] {
-  position: relative;
-}
+/* Головний блок */
 
-[class*=-ibg] img {
-  position: absolute;
+.fls-preloader {
+  pointer-events: none;
+  z-index: -1;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-[class*=-ibg--contain] img {
-  -o-object-fit: contain;
-     object-fit: contain;
+/* Блок з елементами */
+
+.fls-preloader__body {
+  padding: 0.93rem;
+  max-width: 31.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
 }
 
-.button {
-  display: inline-block;
-  border: 0.0625rem solid var(--bg-button);
-  border-radius: 0.3125rem;
-  background-color: var(--bg-button);
-  padding: 0.5625rem 1.625rem;
-  color: var(--color-button);
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
+/* Блок з лічильником */
 
-.button--light {
-  background-color: var(--color-button);
-  color: var(--bg-button);
-  border: 0.0625rem solid var(--color-border);
-}
-
-.block-header--center {
-  text-align: center;
-}
-
-.block-header__title {
-  color: var(--text-heading);
+.fls-preloader__counter {
+  font-size: 8rem;
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.0625rem;
+  color: #1d1d1d;
 }
 
-.block-header__title--big {
-  letter-spacing: -0.0625rem;
+.fls-preloader__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.block-header__text p {
-  line-height: 1.7;
-  letter-spacing: -0.0625rem;
+.fls-preloader__main-circle {
+  width: 180px;
+  height: 180px;
+  border: 6px solid #E0E0E0;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  position: relative;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: rotate 2s infinite;
+          animation: rotate 2s infinite;
+}
+
+.fls-preloader__second-circle {
+  -webkit-animation: rotate 2s infinite 0.4s;
+          animation: rotate 2s infinite 0.4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+  height: 130px;
+  border: 4px solid #1361F5;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  border-radius: 50%;
+  position: relative;
+}
+
+.fls-preloader__last-circle {
+  -webkit-animation: rotate 2s infinite 0.6s;
+          animation: rotate 2s infinite 0.6s;
+  width: 90px;
+  height: 90px;
+  border: 4px solid #ECB22D;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  border-radius: 50%;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* Прогресбар */
+
+.fls-preloader__line {
+  display: inline-block;
+}
+
+/* Лінія прогресбару */
+
+.fls-preloader__line span {
+  display: inline-block;
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+  height: 0.3125rem;
+  border-radius: 0.3125rem;
+  background-color: #2FB67E;
 }
 
 .header {
@@ -716,7 +863,7 @@ body::after {
   width: 100%;
 }
 
-.spollers__item {
+.spollers__items {
   font-size: 1.25rem;
 }
 
@@ -2442,6 +2589,12 @@ body::after {
 
   .counter__body {
     gap: 0.9375rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .fls-preloader__counter {
+    font-size: 6rem;
   }
 }
 
